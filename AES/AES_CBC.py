@@ -24,6 +24,7 @@ def AES_en(key, data):
     return AES_en_str
 
 
+# 解密
 def AES_de(key, data):
     # 解密过程逆着加密过程写
     # 将密文字符串重新编码成二进制形式
