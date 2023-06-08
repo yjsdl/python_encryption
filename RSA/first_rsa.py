@@ -5,13 +5,12 @@
 import rsa
 
 
-def rsaEncrypt(data):
+def rsaEncrypt(data, pubkey):
     # 生成公钥、私钥
-    (pubkey, privkey) = rsa.newkeys(512)
     data = data.encode(encoding='utf-8')
     # 公钥加密
     result = rsa.encrypt(data, pubkey)
-    return result, privkey
+    return result
 
 
 def rsaDecrypt(data, privkey):
@@ -21,8 +20,9 @@ def rsaDecrypt(data, privkey):
 
 
 if __name__ == '__main__':
-    data = '123456'
-    result, privkey = rsaEncrypt(data)
+    pubkey, privkey = rsa.newkeys(512)
+    data = 'I love Python'
+    result = rsaEncrypt(data, pubkey)
     print(result)
     result = rsaDecrypt(result, privkey)
     print(result)

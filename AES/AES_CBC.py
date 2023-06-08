@@ -41,10 +41,9 @@ def AES_de(key, data):
     AES_de_str = AES_de_str.decode("utf-8")
     return AES_de_str
 
-# a = '1671461160186'
-# data = f'vip2019Eguide1122vip|{a}'.encode('utf-8')
-# data = AES_en(key, data)
-# print(data)
-data = '4Y6FpKUtsfeHBixZRU0Zeku4rJGpUVzZBOIpq83Wgq9EDxBoQPWHxfugiSnaX5ov'
+
+data = '123456'.encode('utf-8')
+data = AES_en(key, data)
+print(data)
 data = AES_de(key, data)
 print(data)

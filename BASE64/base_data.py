@@ -11,7 +11,15 @@ def baseEncrypt(data):
     return result
 
 
+def baseDecrypt(data):
+    con = base64.b64decode(data)
+    result = con.decode(encoding='utf-8')
+    return result
+
+
 if __name__ == '__main__':
     data = '123456'
     result = baseEncrypt(data)
+    res = baseDecrypt(result)
     print(result)
+    print(res)
